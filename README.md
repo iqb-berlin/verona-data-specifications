@@ -19,7 +19,7 @@ Der Verona-Ansatz sieht vor, dass ein Testsystem jeweils die Daten einer Unit l�
 und dann eine dazu passende Komponente zur Präsentation wählt (den sog. Player). Folgende 
 Datentypen verwendet das IQB für seine Player:
 
-* [iqb-scripted](manual_iqb-scripted.md): Die Unit-Definition besteht aus einem Script. 
+* [iqb-scripted](unit-defs/manual_iqb-scripted.md): Die Unit-Definition besteht aus einem Script. 
 Diese Folge von Anweisungen ist eine einfache Text-Datei, die in einem Texteditor bearbeitet
 werden kann oder aus einem Hilfsprogramm automatisiert erzeugt wird. Es gibt keine Vorschriften zur 
 Verarbeitung der Antworten (richtig/falsch usw.). Dieses Format wird vorrangig für 
@@ -30,10 +30,10 @@ Während der Durchführung eines Tests oder einer Befragung gibt der Player die
 Antwortdaten an das Testsystem zur Speicherung. Die Spezifikation dieser 
 Antwortdaten ist wichtig, um nachfolgend eine korrekte Datenverarbeitung (Kodierung,
 Analyse) zu gewährleisten:
-* [iqb-dan](manual_iqb-dan.md): Dieses JSON-Format ordnet Antworten als String einem
-für die Unit eindeutigen Schlüssel (ebenfalls vom Typ string) zu. Es ist hierbei offen,
-ob sich der Schlüssel auf eine interne Control-Id oder auf eine abgeleitete Variable
-bezieht.
+* [iqb-key-value](responses/manual_iqb-key-value.md): Dieses JSON-Format ordnet Antworten als String einem
+für die Unit eindeutigen Schlüssel (ebenfalls vom Typ string) zu. Da dieses Format kaum Festlegungen
+enthält, ist es zwar universell, aber erst mit vielen Zusatzinformationen aus dem 
+Erhebungszusammenhang sinnvoll zu verarbeiten.
 
 
 # <a name="english"></a>IQB Verona Data Specifications
