@@ -1,4 +1,4 @@
-# Syntax der Unit-Definition
+# Unit-Definition "iqb-scripted" Version 1.0.0
 Bei der Unit-Definition handelt es sich um eine normale Text-Datei. Jede Zeile 
 enthält die Definition eines Eingabeelementes, eines Textes oder eines 
 Elementes zur Strukturierung. Jede Zeile enthält als erstes ein Schlüsselwort 

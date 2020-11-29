@@ -1,4 +1,4 @@
-# Simples Antwortformat "iqb-key-value"
+# Simples Antwortformat "iqb-key-value" Version 1.0.0
 
 Die Verona-Schnittstelle für Player sieht vor, dass die Antwortdaten aufgeteilt 
 geschickt werden können. Jedes Teilstück (sog. data chunk) wird über einen Schlüssel
