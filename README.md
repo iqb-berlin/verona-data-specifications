@@ -25,7 +25,7 @@ werden kann oder aus einem Hilfsprogramm automatisiert erzeugt wird. Es gibt kei
 Verarbeitung der Antworten (richtig/falsch usw.). Dieses Format wird vorrangig für 
 Befragungen genutzt (z. B. Evaluationen oder Protokolle von Testsitzungen).
 
-## Player-Antwortdaten  
+## Player-Antwortdaten
 Während der Durchführung eines Tests oder einer Befragung gibt der Player die 
 Antwortdaten an das Testsystem zur Speicherung. Die Spezifikation dieser 
 Antwortdaten ist wichtig, um nachfolgend eine korrekte Datenverarbeitung (Kodierung,
@@ -35,6 +35,18 @@ Schlüssel-Wert-Paare in JSON-Notation. Der Schlüssel ist stets ein String, der
 Version 1.0) ebenfalls. Da dieses Format keine weiteren Festlegungen
 enthält, ist es zwar universell, aber erst mit vielen Zusatzinformationen aus dem 
 Erhebungszusammenhang sinnvoll zu verarbeiten.
+
+## Steuerung für Tests/Befragungen
+Die Verona-Schnittstellen beziehen sich jeweils auf eine Unit. Das IQB wird aber auch Konventionen
+definieren, die sich auf die Unit-Abfolge im Rahmen eines Tests bzw. einer Befragung beziehen. Eine 
+IQB-Software soll dann deklarieren, ob oder wie diese Konventionen umgesetzt sind.
+
+Folgende Dokumentationen sind hierzu verfügbar:
+* (IQB-Testcenter): Optionen zur Steuerung der Testdurchführung über die Booklet-Xml 
+[hier](https://github.com/iqb-berlin/testcenter-frontend/blob/master/docs/booklet-config.md). 
+* (IQB-Testcenter): Modi der Testdurchführung (festgelegt über Testtaker-Xml)
+[hier](https://github.com/iqb-berlin/testcenter-frontend/blob/master/docs/test-mode.md). 
+ 
 
 
 # <a name="english"></a>IQB Verona Data Specifications
