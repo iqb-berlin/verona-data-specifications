@@ -30,8 +30,9 @@ Während der Durchführung eines Tests oder einer Befragung gibt der Player die
 Antwortdaten an das Testsystem zur Speicherung. Die Spezifikation dieser 
 Antwortdaten ist wichtig, um nachfolgend eine korrekte Datenverarbeitung (Kodierung,
 Analyse) zu gewährleisten:
-* [iqb-key-value](responses/manual_iqb-key-value.md): Dieses JSON-Format ordnet Antworten als String einem
-für die Unit eindeutigen Schlüssel (ebenfalls vom Typ string) zu. Da dieses Format kaum Festlegungen
+* [iqb-key-value](responses/manual_iqb-key-value.md): Dieses JSON-Format speichert Antworten als 
+Schlüssel-Wert-Paare in JSON-Notation. Der Schlüssel ist stets ein String, der Wert (aktuell in 
+Version 1.0) ebenfalls. Da dieses Format keine weiteren Festlegungen
 enthält, ist es zwar universell, aber erst mit vielen Zusatzinformationen aus dem 
 Erhebungszusammenhang sinnvoll zu verarbeiten.
 
