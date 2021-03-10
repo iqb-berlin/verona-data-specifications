@@ -85,8 +85,9 @@ multiple-choice::task3wtrtimeS::1::trifft gar nicht zu##trifft eher nicht zu##tr
 `repeat-start` und `repeat-end` markieren einen Block von Elementen, der während der Beantwortung dynamisch 
 mehrfach erzeugt wird. Dazu muss die befragte Person eine Zahl eingeben, die die Anzahl der Wiederholungen steuert. 
 Alle Variablennamen der im Block befindlichen Eingabeelemente erhalten für den jeweiligen Blockdurchlauf einen  
-Suffix: '_' + laufende Nummer des aktuellen Blockdurchlaufes, beginnend mit '_1'.
- 
+Suffix: '_' + laufende Nummer des aktuellen Blockdurchlaufes, beginnend mit '_1'.\
+Innerhalb des Blocks ist es möglich Ein- und Ausblendungen vorzunehmen. Hierbei ist möglich sich auf Variablen innerhalb des Blocks oder auf auf höchster Ebene zu beziehen. Bei Verschachtelung mehrerer Schleifen kann sich nicht auf Variablen auf anderer Schachtelungsebene bezogen werden.
+
 | Schlüsselwort | Parameter | Standardwert |
 | :------------- | :------------- | :------------- |
 | `repeat-start` | 1. Name der Variablen, in die die Eingabe (Anzahl) gespeichert werden soll | *Angabe ist erforderlich*|
