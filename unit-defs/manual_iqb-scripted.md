@@ -1,29 +1,29 @@
 # Unit-Definition "iqb-scripted" Version 1.0.0
-Bei der Unit-Definition handelt es sich um eine normale Text-Datei. Jede Zeile 
-enthält die Definition eines Eingabeelementes, eines Textes oder eines 
-Elementes zur Strukturierung. Jede Zeile enthält als erstes ein Schlüsselwort 
+Bei der Unit-Definition handelt es sich um eine normale Text-Datei. Jede Zeile
+enthält die Definition eines Eingabeelementes, eines Textes oder eines
+Elementes zur Strukturierung. Jede Zeile enthält als erstes ein Schlüsselwort
 und kann dahinter weitere Parameter enthalten, jeweils getrennt mit `::`.
 
 * Die erste Zeile MUSS lauten `iqb-scripted::1.0`.
-* Am Ende einer Definitionszeile kann nach `??` noch weiterer Text angefügt werden, 
+* Am Ende einer Definitionszeile kann nach `??` noch weiterer Text angefügt werden,
 der als Hilfe-/Hinweistext verwendet wird (Abruf über gesonderten Schalter).
-* Eine leere Zeile erzeugt einen Abstand im Formular in der Höhe eines 
+* Eine leere Zeile erzeugt einen Abstand im Formular in der Höhe eines
 Text-Elementes.
-* Vor dem Schlüsselwort können Leer- oder Tabzeichen eingefügt werden, um die 
+* Vor dem Schlüsselwort können Leer- oder Tabzeichen eingefügt werden, um die
 Lesbarkeit des Scriptes zu erhöhen. Sie werden bei der Auswertung ignoriert.
 
 ## Statische Texte, Linien, Kommentare
-Wird bei den Schlüsselworten title, header oder text der jeweilige Parameter 
+Wird bei den Schlüsselworten title, header oder text der jeweilige Parameter
 weggelassen, wird ein Zeilenabstand in der jeweiligen Höhe eingefügt.
-  
+
 | Schlüsselwort | Bedeutung | Parameter |
 | :------------- | :------------- | :------------- |
 | `title` | eine Zeile Text als oberste Gliederungsüberschrift | Text des Titels (optional)|
 | `header` | eine Zeile Text als zweite Gliederungsüberschrift | Text der Überschrift (optional)|
 | `text` | Standard-Text | Text (optional)|
 | `html`| wird genau so in das Formular übernommen; zur Lösung besonderer Layout-Probleme| Html-Text|
-| `hr`| stellt eine horizontale Linie dar | *keine* | 
-| `rem`| leitet einen Kommentar ein, der bei der Verarbeitung ignoriert wird |  | 
+| `hr`| stellt eine horizontale Linie dar | *keine* |
+| `rem`| leitet einen Kommentar ein, der bei der Verarbeitung ignoriert wird |  |
 
 #### Beispiele
 ```
@@ -57,7 +57,7 @@ input-number::task12ahmfA::1::Teilaufgabe 1.2a (Analysis)::::0::10
 input-text::note::0::Weitere Kommentare zu den Prüfungsaufgaben (optional)::::20??Abschließend haben Sie an dieser Stelle die Möglichkeit, zusätzliche Hinweise und Kommentare zu den Prüfungsaufgaben und Erwartungshorizonten festzuhalten.
 ```
 ## Ankreuzen/Auswählen
-Bei einer `checkbox` kreuzt man nur an. Bei `multiple-choice` werden die Optionen 
+Bei einer `checkbox` kreuzt man nur an. Bei `multiple-choice` werden die Optionen
 untereinander dargestellt und es kann nur eine Option ausgewählt werden. Bei
 `drop-down` werden die Optionen in eine Klappbox gepackt, was Platz spart.  
 
@@ -82,8 +82,8 @@ multiple-choice::task3wtrtimeS::1::trifft gar nicht zu##trifft eher nicht zu##tr
 ```
 
 ## Schleifen
-`repeat-start` und `repeat-end` markieren einen Block von Elementen, der während der Beantwortung dynamisch 
-mehrfach erzeugt wird. Dazu muss die befragte Person eine Zahl eingeben, die die Anzahl der Wiederholungen steuert. 
+`repeat-start` und `repeat-end` markieren einen Block von Elementen, der während der Beantwortung dynamisch
+mehrfach erzeugt wird. Dazu muss die befragte Person eine Zahl eingeben, die die Anzahl der Wiederholungen steuert.
 Alle Variablennamen der im Block befindlichen Eingabeelemente erhalten für den jeweiligen Blockdurchlauf einen  
 Suffix: '_' + laufende Nummer des aktuellen Blockdurchlaufes, beginnend mit '_1'.\
 Innerhalb des Blocks ist es möglich Ein- und Ausblendungen vorzunehmen. Hierbei ist möglich sich auf Variablen innerhalb des Blocks oder auf auf höchster Ebene zu beziehen. Bei Verschachtelung mehrerer Schleifen kann sich nicht auf Variablen auf anderer Schachtelungsebene bezogen werden.
@@ -121,11 +121,11 @@ task3_3;6
 ```
 
 ## Ausblenden/Einblenden
-`if-start` und `if-end` markieren einen Block von Elementen, der in Abhängigkeit des Wertes einer 
-Variablen gezeigt oder ausgeblendet wird. Dabei wird der eingegebene Wert 
+`if-start` und `if-end` markieren einen Block von Elementen, der in Abhängigkeit des Wertes einer
+Variablen gezeigt oder ausgeblendet wird. Dabei wird der eingegebene Wert
 mit einem Sollwert verglichen. Mit `if-else` können Elemente ein-/ausgeblendet werden, wenn
-der Wert **nicht** mit dem Sollwert übereinstimmt. 
- 
+der Wert **nicht** mit dem Sollwert übereinstimmt.
+
 | Schlüsselwort | Parameter |
 | :------------- | :------------- |
 | `if-start` | 1. Name der Variablen, deren Wert geprüft werden soll|
