@@ -139,7 +139,7 @@ nav-button-group ermöglicht das Einfügen von Navigationselementen. Art und Rei
 
 | Schlüsselwort | Parameter |
 | :------------- | :------------- |
-| `if-nav-button-group` | 1. Liste der Optionen, jeweils getrennt durch ##
+| `nav-button-group` | 1. Liste der Optionen, jeweils getrennt durch ##
 
 #### Beispiele
 ```
