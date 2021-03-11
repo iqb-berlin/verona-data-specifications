@@ -132,3 +132,17 @@ der Wert **nicht** mit dem Sollwert übereinstimmt.
 |  | 2. Wert|
 | `if-else` | *keine*|
 | `if-end` | *keine*|
+
+## Navigation
+nav-button-group ermöglicht das Einfügen von Navigationselementen. Art und Reihenfolge können gewählt werden. Mögliche Bedienelemente sind:
+`next`, `previous`, `first`, `last` und `end`.
+
+| Schlüsselwort | Parameter |
+| :------------- | :------------- |
+| `if-nav-button-group` | 1. Liste der Optionen, jeweils getrennt durch ##
+
+#### Beispiele
+```
+nav-button-group::previous##next##first##last##end
+nav-button-group::next
+```
