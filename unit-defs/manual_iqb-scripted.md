@@ -68,7 +68,7 @@ untereinander dargestellt und es kann nur eine Option ausgewählt werden. Bei
 |  | Achtung: Pflichtfeld bedeutet hier, dass die Checkbox ausgewählt/angekreuzt sein muss (z. B. Zustimmung zu Datenschutzfragen).||
 |  | 3. Text vor dem Eingabefeld (Eingabeaufforderung)|*kein Text*|
 |  | 4. Text nach dem Eingabefeld|*kein Text*|
-|  | Achtung: Als Wert der Variablen wird 'true' oder '' (leer) gespeichert.||
+|  | Achtung: Als Wert der Variablen wird 'true' oder 'false'  gespeichert. Der Wert der Variable ist im Ausgangszustand immer 'false'.||
 | `multiple-choice` oder `drop-down`| 1. Name der Variablen, in die die Eingabe gespeichert werden soll | *Angabe ist erforderlich*|
 |  | 2. Pflichtfeld: `0`=nein, `1`=ja|`0`|
 |  | 3. Text vor der Optionsliste (Eingabeaufforderung)|*kein Text*|
