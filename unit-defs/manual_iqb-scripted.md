@@ -81,6 +81,26 @@ checkbox::task162ahmfF::0::Sie fühlen sich beunruhigt
 multiple-choice::task3wtrtimeS::1::trifft gar nicht zu##trifft eher nicht zu##trifft eher zu##trifft voll zu
 ```
 
+## Likert-Skala
+Mit dem `likert` Element kann eine Liste von Fragen mit einer einheitlicher
+Antwortskala definiert werden. Sie funktioniert ähnlich  wie eine Liste von
+exklusiven Checkboxen mit dem Unterschied, dass Antworten nur einmal definiert
+werden müssen.
+
+| Schlüsselwort | Parameter | Standardwert |
+| :------------- | :------------- | :------------- |
+| `likert-start` | 1. Liste der Antwortoptionen jeweils getrennt durch `##` | *Angabe ist erforderlich*|
+| Name der Variablen, in die die Eingabe gespeichert werden soll | (Frage)Text | *mindestens eine Angabe ist erforderlich*|
+| `likert-end` | 1. keine | *Angabe ist erforderlich*|
+
+#### Beispiele
+```
+likert-start::trifft gar nicht zu##trifft eher nicht zu##trifft eher zu##trifft voll zu
+    likert1::iqb-scripted ist toll
+    likert2::simple player unit Definition ist toll
+likert-end
+```
+
 ## Schleifen
 `repeat-start` und `repeat-end` markieren einen Block von Elementen, der während der Beantwortung dynamisch
 mehrfach erzeugt wird. Dazu muss die befragte Person eine Zahl eingeben, die die Anzahl der Wiederholungen steuert.
