@@ -90,14 +90,14 @@ werden müssen.
 | Schlüsselwort | Parameter | Standardwert |
 | :------------- | :------------- | :------------- |
 | `likert-start` | 1. Liste der Antwortoptionen jeweils getrennt durch `##` | *Angabe ist erforderlich*|
-| Name der Variablen, in die die Eingabe gespeichert werden soll | (Frage)Text | *mindestens eine Angabe ist erforderlich*|
+| likert | 1. Name der Variablen, in die die Eingabe gespeichert werden soll 2. (Frage)Text | *mindestens eine Angabe ist erforderlich*|
 | `likert-end` | 1. keine | *Angabe ist erforderlich*|
 
 #### Beispiele
 ```
 likert-start::trifft gar nicht zu##trifft eher nicht zu##trifft eher zu##trifft voll zu
-    likert1::iqb-scripted ist toll
-    likert2::simple player unit Definition ist toll
+    likert::likert1::iqb-scripted ist toll
+    likert::likert2::simple player unit Definition ist toll
 likert-end
 ```
 
