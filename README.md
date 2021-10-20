@@ -35,6 +35,7 @@ Schlüssel-Wert-Paare in JSON-Notation. Der Schlüssel ist stets ein String, der
 Version 1.0) ebenfalls. Da dieses Format keine weiteren Festlegungen
 enthält, ist es zwar universell, aber erst mit vielen Zusatzinformationen aus dem 
 Erhebungszusammenhang sinnvoll zu verarbeiten.
+* [iqb-standard](responses/manual_iqb-standard.md): Dieses JSON-Format speichert Antworten mit einem Status ab. Es wird seit 2022 für alle IQB-Player verwendet.
 
 ## Steuerung für Tests/Befragungen
 Die Verona-Schnittstellen beziehen sich jeweils auf eine Unit. Das IQB wird aber auch Konventionen
@@ -53,11 +54,7 @@ Folgende Dokumentationen sind hierzu verfügbar:
 Verona interfaces are specifications concerning computer based assessment. You can learn 
 more about this German initiative [here](https://github.com/verona-interfaces/introduction).
 
-The IQB uses these interface specs for it's own applications. One important feature of these 
-Verona interfaces is the black box approach for data exchange. Although the 
-applications communicate via well defined channels, the structure of the transferred 
-data is unknown. Only the name and version of data specification is needed to select 
-the matching component.  
+The IQB uses these interface specs for its own applications. One important feature of these Verona interfaces is the black box approach for data exchange. Although the applications communicate via well-defined channels, the structure of the transferred data is unknown. Only the name and version of data specification is needed to select the matching component.  
 
 Nevertheless, every producer of data should document data structures. For the IQB, we 
 do this in this repository. The manuals are in German language, because most of the 
