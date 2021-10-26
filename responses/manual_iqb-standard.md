@@ -1,7 +1,11 @@
 # IQB-Standardformat für Antworten
-*1.0.0*
+*version 1.0.0*
 
-Jede Antwort wird mit folgender JSON-Datenstruktur abgespeichert:
+Als Antworten bezeichnen wir die Daten, die durch die Interaktion der Testperson mit dem Testsystem entstehen und als Zustände zum Ende der Bearbeitung gespeichert werden. Antworten absolvieren einen Verarbeitungsprozess vom Ursprung (sog. Basisvariable, Rohdaten-Wert) über Ableitung, Cleaning, Kodierung bis zur Bewertung. Die Daten, die nach der Aufbereitung für die Datenanalyse bereitgestellt werden (z. B. IRT-/Rasch-Analyse), nennen wir Primärdaten.
+
+Die zweite Art von Daten, die aus der Interaktion mit dem Testsystem resultieren, sind Log-Daten. Diese beschreiben nicht Zustände zum Ende der Bearbeitung, sondern beschreiben Veränderungen während der Bearbeitung. Sie können zu weiteren Variablen führen, die jedoch nicht Teil der hier beschriebenen Datenstruktur sind.
+
+Jede Antwort wird mit der folgenden JSON-Datenstruktur abgespeichert. Wenn eine Software-Komponente das Datenformat definieren soll (z. B. im Player als Teil der Verona-Spezifikation), dann wird das Schlüsselwort 'iqb-standard' gefolgt von der Version in SemVer-Notation verwendet, also z. B. `iqb-standard@1.0.0`.
 
 ```
 {
