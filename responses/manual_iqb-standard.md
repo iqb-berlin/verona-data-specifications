@@ -5,13 +5,13 @@ Als Antworten bezeichnen wir die Daten, die durch die Interaktion der Testperson
 
 Die zweite Art von Daten, die aus der Interaktion mit dem Testsystem resultieren, sind Log-Daten. Diese beschreiben nicht Zustände zum Ende der Bearbeitung, sondern beschreiben Veränderungen während der Bearbeitung. Sie können zu weiteren Variablen führen, die jedoch nicht Teil der hier beschriebenen Datenstruktur sind.
 
-Jede Antwort wird mit der folgenden JSON-Datenstruktur abgespeichert. Wenn eine Software-Komponente das Datenformat definieren soll (z. B. im Player als Teil der Verona-Spezifikation), dann wird das Schlüsselwort 'iqb-standard' gefolgt von der Version in SemVer-Notation verwendet, also z. B. `iqb-standard@1.0.0`.
+Jede Antwort wird mit der folgenden JSON-Datenstruktur abgespeichert. Wenn eine Software-Komponente das Datenformat definieren soll (z. B. im Player als Teil der Verona-Spezifikation), dann wird das Schlüsselwort 'iqb-standard' gefolgt von der Version in SemVer-Notation verwendet, also z. B. `iqb-standard@1.0`.
 
 ```
 {
     id: string,
     status: string,
-    value: any,
+    value: null | number | string | boolean | number[] | string[] | boolean[],
     code?: number,
     score?: number
 }
@@ -20,6 +20,8 @@ Jede Antwort wird mit der folgenden JSON-Datenstruktur abgespeichert. Wenn eine 
 Mit dieser Kennung wird die Antwort einer Variablen zugeordnet.
 
 ## status
+Die mit * gekennzeichneten Stati können im Primärdatensatz enthalten sein. Sie sind also zulässige Zustände einer Antwort zum Ende der Aufbereitung und der Kodierung. Die anderen Zustände kennzeichnen nur Verarbeitungsstufen während der Aufbereitung und Kodierung.
+
 #### Variablen aus dem Testsystem/Player
 | Wert | Bedeutung | Beschreibung |
 | :------------- | :------------- | :------------- |
@@ -44,15 +46,20 @@ Mit dieser Kennung wird die Antwort einer Variablen zugeordnet.
 | `CODING_INCOMPLETE` | Kodierung unvollständig | Es wurden Versuche unternommen, automatisch und evtl. zusätzlich  manuell zu kodieren, aber es konnte kein Code und kein Score zugeordnet werden. |
 | `CODING_ERROR` | Kodierungsfehler | Der Wert hat nicht das erwartete Format (z. B. numerisch) oder die Transformation ist fehlgeschlagen (z. B. Umformung eines Datums in ein Standardformat). |
 
-Die mit * gekennzeichneten Stati können im Primärdatensatz enthalten sein. Sie sind also zulässige Zustände einer Antwort zum Ende der Aufbereitung und der Kodierung. Die anderen Zustände kennzeichnen nur Verarbeitungsstufen während der Aufbereitung und Kodierung. 
-
 ## value
-Hier ist der Antwortwert gespeichert. Das Format ist nicht festgelegt, sondern ist auf alle in JSON zulässige Daten bzw. Datenstrukturen ausgeweitet. Das ermöglicht dem Player, bei Bedarf sehr komplexe Zustände effizient zu speichern.
+Hier ist der Antwortwert gespeichert. Das Datenformat ist auf die JavaScript-Basistypen null, string, number und boolean sowie auf ein homogenes Array der JavaScript-Basistypen number, string und boolean festgelegt.
 
-Zur Weiterverarbeitung der Antworten wird allerdings der Wert in einen String umgewandelt. Die nachfolgenden Prozesse - insbesondere die Kodierung - erwarten ein einheitliches Datenformat. Ein string-Wert wird nicht weiter verändert, aber alle anderen Datentypen müssen (z. B. über `JSON.stringify()`) serialisiert werden. Boolsche Wert sind dann beispielsweise als `"true"` und `"false"` auswertbar.
+Sollte zur Weiterverarbeitung der Antworten der Wert in einen String umgewandelt werden müssen, dann gelten folgende Regeln:
+
+| Ausgangswert | Zielwert | Anmerkungen |
+| :------------- | :------------- | :------------- |
+| `null` | leerer string | Es muss beachtet werden, dass ein Informationsverlust eintreten kann, wenn die Variable theoretisch außerdem einen leeren String als Wert enthalten kann. |
+| `number` | Nutzung der Funktion `toString()` | Es wird keine weitere Formatierung vorgesehen. Eine Rückumwandlung muss mit `parseFloat()` möglich sein, d. h. es wird ein Punkt als Dezimaltrennzeichen erwartet. |
+| `boolean` | `false` > "0", `true` > "1" | Die Umwandlung in Zahlen wird bevorzugt, da dies der üblichen Speicherung in Statistik-Software entspricht. |
+| `array` | `join(' ')` | Nach der Umwandlung der Einzelwerte werden diese zusammengefügt. Es wird ein Leerzeichen als Trennzeichen verwendet. Wenn die Einzelwerte ebenfalls Leerzeichen enthalten können, dann kann es zu Datenverlust kommen. |
 
 ## code
 Sofern der Wert kodiert wurde, wird zusätzlich dieser Code mit angegeben. Es handelt sich stets um einen ganzzahligen Integer, der die Antwort in eine Kategorie einordnet und damit für eine statistische Analyse erschließt. Üblicherweise werden positive ganze Zahlen für gültige Antworten und negative ganze Zahlen für ungültige oder fehlende Antworten verwendet.
 
 ## score
-Sofern der Wert kodiert wurde, kann zusätzlich eine Bewertung des Codes mit angegeben werden. Damit kann z. B. ausgedrückt werden, ob es sich um eine richtige oder eine falsche Antwort handelt, also üblicherweise `0` oder `1`. Dies ist für die nachfolgende statistische Analyse wichtig. Es kann aber als score auch ein Wert gesetzt werden, der  eine abgeleitete Variable steuert und hierfür auch negative ganze Zahlen einschließt.
+Sofern der Wert kodiert wurde, kann zusätzlich eine Bewertung des Codes mit angegeben werden. Damit kann z. B. ausgedrückt werden, ob es sich um eine richtige oder eine falsche Antwort handelt, also üblicherweise `0` oder `1`. Dies ist für die nachfolgende statistische Analyse wichtig. Es kann aber als score auch ein Wert gesetzt werden, der  eine abgeleitete Variable steuert und hierfür auch negative ganze Zahlen einschließt.

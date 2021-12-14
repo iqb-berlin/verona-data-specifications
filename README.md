@@ -30,12 +30,12 @@ Während der Durchführung eines Tests oder einer Befragung gibt der Player die
 Antwortdaten an das Testsystem zur Speicherung. Die Spezifikation dieser 
 Antwortdaten ist wichtig, um nachfolgend eine korrekte Datenverarbeitung (Kodierung,
 Analyse) zu gewährleisten:
-* [iqb-key-value](responses/manual_iqb-key-value.md): Dieses JSON-Format speichert Antworten als 
-Schlüssel-Wert-Paare in JSON-Notation. Der Schlüssel ist stets ein String, der Wert (aktuell in 
-Version 1.0) ebenfalls. Da dieses Format keine weiteren Festlegungen
-enthält, ist es zwar universell, aber erst mit vielen Zusatzinformationen aus dem 
-Erhebungszusammenhang sinnvoll zu verarbeiten.
 * [iqb-standard](responses/manual_iqb-standard.md): Dieses JSON-Format speichert Antworten mit einem Status ab. Es wird seit 2022 für alle IQB-Player verwendet.
+* [iqb-key-value](responses/manual_iqb-key-value.md) :warning: deprecated/veralted: Dieses JSON-Format speichert Antworten als
+  Schlüssel-Wert-Paare in JSON-Notation. Der Schlüssel ist stets ein String, der Wert (aktuell in
+  Version 1.0) ebenfalls. Da dieses Format keine weiteren Festlegungen
+  enthält, ist es zwar universell, aber erst mit vielen Zusatzinformationen aus dem
+  Erhebungszusammenhang sinnvoll zu verarbeiten.
 
 ## Steuerung für Tests/Befragungen
 Die Verona-Schnittstellen beziehen sich jeweils auf eine Unit. Das IQB wird aber auch Konventionen
