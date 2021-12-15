@@ -22,6 +22,8 @@ Mit dieser Kennung wird die Antwort einer Variablen zugeordnet.
 ## status
 Die mit * gekennzeichneten Stati können im Primärdatensatz enthalten sein. Sie sind also zulässige Zustände einer Antwort zum Ende der Aufbereitung und der Kodierung. Die anderen Zustände kennzeichnen nur Verarbeitungsstufen während der Aufbereitung und Kodierung.
 
+Sollten Antwort-Daten in dieses Standardformat konvertiert werden, die keine Statusinformation nach dieser Definition enthalten, dann kann der Wert `UNSET` verwendet werden.  
+
 #### Variablen aus dem Testsystem/Player
 | Wert | Bedeutung | Beschreibung |
 | :------------- | :------------- | :------------- |
