@@ -58,7 +58,7 @@ Sollte zur Weiterverarbeitung der Antworten der Wert in einen String umgewandelt
 | `null` | leerer string | Es muss beachtet werden, dass ein Informationsverlust eintreten kann, wenn die Variable theoretisch außerdem einen leeren String als Wert enthalten kann. |
 | `number` | Nutzung der Funktion `toString()` | Es wird keine weitere Formatierung vorgesehen. Eine Rückumwandlung muss mit `parseFloat()` möglich sein, d. h. es wird ein Punkt als Dezimaltrennzeichen erwartet. |
 | `boolean` | `false` > "0", `true` > "1" | Die Umwandlung in Zahlen wird bevorzugt, da dies der üblichen Speicherung in Statistik-Software entspricht. |
-| `array` | `join(' ')` | Nach der Umwandlung der Einzelwerte werden diese zusammengefügt. Es wird ein Leerzeichen als Trennzeichen verwendet. Wenn die Einzelwerte ebenfalls Leerzeichen enthalten können, dann kann es zu Datenverlust kommen. |
+| `array` | `join(' ')` | Nach der Umwandlung der Einzelwerte werden diese zusammengefügt. Es wird ein Leerzeichen als Trennzeichen verwendet. Die nachfolgenden Verarbeitungsstufen sollten den Fall berücksichtigen, dass Einzelwerte ebenfalls Leerzeichen enthalten. |
 
 ## code
 Sofern der Wert kodiert wurde, wird zusätzlich dieser Code mit angegeben. Es handelt sich stets um einen ganzzahligen Integer, der die Antwort in eine Kategorie einordnet und damit für eine statistische Analyse erschließt. Üblicherweise werden positive ganze Zahlen für gültige Antworten und negative ganze Zahlen für ungültige oder fehlende Antworten verwendet.
